@@ -1,0 +1,15 @@
+[Unit]
+Description=GAMEVERSE Strategy Bot & Admin API Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/gameverse
+EnvironmentFile=/var/www/gameverse/.env
+ExecStart=/var/www/gameverse/venv/bin/python main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
